@@ -1,0 +1,38 @@
+div {
+    &.container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &.line {
+        display: inline-block;
+        border-bottom-left-radius: 1rch;
+        border-bottom-right-radius: 1rch;
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 0.25rch;
+    }
+}
+
+input {
+    border: none;
+    background-color: transparent;
+    text-align: center;
+
+    &:focus {
+        outline: none;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &[size="2"] {
+        width: 2rch;
+    }
+
+    &[size="3"] {
+        width: 3rch;
+    }
+}

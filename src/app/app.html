@@ -1,8 +1,12 @@
 <main>
-  <input [(ngModel)]="octet_1" type="number" min="0" max="255" size="3" maxlength="3" (blur)="octet_1 = octet_1"><br>
-  <input [(ngModel)]="octet_2" type="number" min="0" max="255" size="3" maxlength="3"><br>
-  <input [(ngModel)]="octet_3" type="number" min="0" max="255" size="3" maxlength="3"><br>
-  <input [(ngModel)]="octet_4" type="number" min="0" max="255" size="3" maxlength="3"><br>
-  {{ octet_1 }}<br>
-  {{ ip_decimal.join('.')}} / {{ cidr_int }}
+  <div class="input">
+    <app-input-ipv4></app-input-ipv4>
+  </div>
+  <div class="scrollOuter">
+    <div class="scrollInner">
+      <div class="simple_ip">
+        <app-simple-binary></app-simple-binary>
+      </div>
+    </div>
+  </div>
 </main>

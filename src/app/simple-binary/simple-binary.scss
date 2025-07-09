@@ -1,0 +1,50 @@
+pre {
+    margin: 0;
+}
+
+table {
+    border-collapse: 0;
+    border-spacing: 0;
+}
+
+tr {
+    td {
+        border-bottom: 1px solid black;
+    }
+
+    &:last-of-type {
+        td {
+            border-bottom: none;
+        }
+    }
+
+    &.empty {
+        height: 1rem;
+    }
+
+    &:has(+ tr.empty) {
+        td {
+            border-bottom: none;
+        }
+    }
+}
+
+td {
+    &:first-of-type {
+        padding-right: 1rem;
+    }
+
+    &:nth-of-type(n+2) {
+        text-align: center;
+    }
+
+    &.lan {
+        background-color: rgba(0, 0, 0, 0.1);
+        background-color: lime;
+    }
+
+    &.host {
+        background-color: rgba(0, 0, 0, 0.3);
+        background-color: YELLOW;
+    }
+}

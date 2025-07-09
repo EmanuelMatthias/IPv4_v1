@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="line">
+        <input [value]="ip[0]" 
+        (input)="setOctet(0, $event)" 
+        (focus)="focusHandler($event)" min="0" max="255" type="number" size="3" maxlength="3"
+            tabindex="1">
+        .
+        <input [value]="ip[1]" (input)="setOctet(1, $event)"  
+        (focus)="focusHandler($event)" min="0" max="255" type="number" size="3" maxlength="3"
+            tabindex="2">
+        .
+        <input [value]="ip[2]" (input)="setOctet(2, $event)"  
+        (focus)="focusHandler($event)" min="0" max="255" type="number" size="3" maxlength="3"
+            tabindex="3">
+        .
+        <input [value]="ip[3]" (input)="setOctet(3, $event)"  
+        (focus)="focusHandler($event)" min="0" max="255" type="number" size="3" maxlength="3"
+            tabindex="4">
+        /
+        <input [value]="cidr" (input)="setCIDR($event)"  
+        (focus)="focusHandler($event)" min="0" max="32" type="number" size="2" maxlength="2"
+            tabindex="5">
+    </div>
+</div>

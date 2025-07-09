@@ -1,0 +1,82 @@
+<table>
+    <tr>
+        <td>Mask</td>
+        <td *ngFor="let item of mask_bin_splited.lan,let id = index" class="lan"><pre>{{ id!==0?' ':''}}{{ item }}</pre></td>
+        <td *ngFor="let item of mask_bin_splited.host,let id = index" class="host"><pre>{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre></td>
+    </tr>
+    <tr>
+        <td>IP</td>
+        <td *ngFor="let item of ip_bin_splited.lan,let id = index" class="lan"><pre>{{ id!==0?' ':''}}{{ item }}</pre></td>
+        <td *ngFor="let item of ip_bin_splited.host,let id = index" class="host"><pre>{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre></td>
+    </tr>
+    <tr>
+        <td>Network</td>
+        <td *ngFor="let item of network_bin_splited.lan,let id = index" class="lan"><pre>{{ id!==0?' ':''}}{{ item }}</pre></td>
+        <td *ngFor="let item of network_bin_splited.host,let id = index" class="host"><pre>{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre></td>
+    </tr>
+    <tr>
+        <td>Broadcast</td>
+        <td *ngFor="let item of broadcast_bin_splited.lan,let id = index" class="lan"><pre>{{ id!==0?' ':''}}{{ item }}</pre></td>
+        <td *ngFor="let item of broadcast_bin_splited.host,let id = index" class="host"><pre>{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre></td>
+    </tr>
+    <tr>
+        <td>First Address</td>
+        <td *ngFor="let item of firstaddress_bin_splited.lan,let id = index" class="lan"><pre>{{ id!==0?' ':''}}{{ item }}</pre></td>
+        <td *ngFor="let item of firstaddress_bin_splited.host,let id = index" class="host"><pre>{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre></td>
+    </tr>
+    <tr>
+        <td>Last Address</td>
+        <td *ngFor="let item of lastaddress_bin_splited.lan,let id = index" class="lan"><pre>{{ id!==0?' ':''}}{{ item }}</pre></td>
+        <td *ngFor="let item of lastaddress_bin_splited.host,let id = index" class="host"><pre>{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre></td>
+    </tr>
+    <tr class="empty"></tr>
+    <tr>
+        <td>Mask</td>
+        <td *ngFor="let item of mask_dec,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+    </tr>
+    <tr>
+        <td>IP</td>
+        <td *ngFor="let item of ip_dec,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+    </tr>
+    <tr>
+        <td>Network</td>
+        <td *ngFor="let item of network_dec,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+    </tr>
+    <tr>
+        <td>Broadcast</td>
+        <td *ngFor="let item of broadcast_dec,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+    </tr>
+    <tr>
+        <td>First Address</td>
+        <td *ngFor="let item of firstAddress_dec,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+    </tr>
+    <tr>
+        <td>Last Address</td>
+        <td *ngFor="let item of lastAddress_dec,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+    </tr>
+    <tr class="empty"></tr>
+    <tr>
+        <td>Mask</td>
+        <td *ngFor="let item of mask_hex,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+    </tr>
+    <tr>
+        <td>IP</td>
+        <td *ngFor="let item of ip_hex,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+    </tr>
+    <tr>
+        <td>Network</td>
+        <td *ngFor="let item of network_hex,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+    </tr>
+    <tr>
+        <td>Broadcast</td>
+        <td *ngFor="let item of broadcast_hex,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+    </tr>
+    <tr>
+        <td>First Address</td>
+        <td *ngFor="let item of firstAddress_hex,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+    </tr>
+    <tr>
+        <td>Last Address</td>
+        <td *ngFor="let item of lastAddress_hex,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+    </tr>
+</table>
