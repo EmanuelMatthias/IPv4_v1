@@ -53,6 +53,9 @@ export class IPv4 {
     public set_Ip_with_decimal(decNotation: string) {
         this.base = this.ipToInt(decNotation);
     }
+    public set_Ip_with_int(int: number) {
+        this.base = int;
+    }
 
     public set_CIDR_with_int(value: number | string) {
         this.cidr = Number(value);
