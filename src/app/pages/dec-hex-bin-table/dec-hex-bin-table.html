@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <th>Index</th>
+        <th>Hex</th>
+        <th>Index * 16</th>
+        <th>Binary</th>
+    </tr>
+    <tr *ngFor="let row of table_matrix">
+        <td>{{ row.index }}</td>
+        <td>{{ row.simpleHex }}</td>
+        <td>{{ row.multiHex }}</td>
+        <td>{{ row.bin }}</td>
+    </tr>
+</table>

@@ -1,7 +1,8 @@
-:host{
-    display: block;
-    padding: 0 1rem;
+:host {
+    display: flex;
+    justify-content: center;
 }
+
 pre {
     margin: 0;
 }

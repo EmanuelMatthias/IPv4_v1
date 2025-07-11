@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { InputIpv4 } from '../../input-ipv4/input-ipv4';
-import { SimpleBinary } from '../../simple-binary/simple-binary';
+import { InputIpv4 } from '../../components/input-ipv4/input-ipv4';
+import { SimpleBinary } from '../../components/simple-binary/simple-binary';
 
 @Component({
   selector: 'app-ipv4-overview',

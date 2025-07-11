@@ -1,0 +1,37 @@
+:host {
+    display: flex;
+    justify-content: center;
+}
+table {
+    margin-top: 1rem;
+    border-collapse: 0;
+    border-spacing: 0;
+
+    tr {
+        th {
+            border-bottom: 1px solid black;
+            padding: 0 1rem;
+        }
+
+        td {
+            border-bottom: 1px solid black;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        &:not(:has(th)):hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        &:has(+ tr:hover),
+        &:hover+tr {
+            background-color: rgba(0, 0, 0, 0.0);
+        }
+    }
+
+    tr:last-of-type {
+        td {
+            border-bottom: none;
+        }
+    }
+}

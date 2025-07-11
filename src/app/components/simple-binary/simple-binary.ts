@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Ipv4Service } from '../../services/ipv4/ipv4';
 import { CommonModule } from '@angular/common';
+import { Ipv4Service } from '../../../services/ipv4/ipv4';
 
 @Component({
   selector: 'app-simple-binary',

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Ipv4Service } from '../../services/ipv4/ipv4';
-import { FormsModule } from '@angular/forms';
+import { Ipv4Service } from '../../../services/ipv4/ipv4';
 
 @Component({
   selector: 'app-input-ipv4',
