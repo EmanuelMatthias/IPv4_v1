@@ -44,12 +44,10 @@ td {
     }
 
     &.lan {
-        background-color: rgba(0, 0, 0, 0.1);
-        background-color: lime;
+        background-color: rgba(0, 255, 0, 0.5);
     }
 
     &.host {
-        background-color: rgba(0, 0, 0, 0.3);
-        background-color: yellow;
+        background-color: rgba(255, 255, 0, 0.5);
     }
 }

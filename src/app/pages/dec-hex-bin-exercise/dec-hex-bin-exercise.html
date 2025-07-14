@@ -1,7 +1,25 @@
 <table>
     <tr>
-        <td>
-            From {{ types.in }} to {{ types.out }}
+        <td class="incoming">
+            <div class="type">{{ types.in }}</div>
+            <div>{{ number.in }}</div>
+        </td>
+    </tr>
+    <tr>
+        <td class="outcoming" [class]="success_class">
+            <div class="type">{{ types.out }}</div>
+            <div>
+                <input (keyup.enter)="enterHandler($event)" />
+            </div>
+            <div>
+                <button (click)="showMe()">show</button>
+            </div>
+            <div *ngIf="showValue">{{ number.out }}</div>
+        </td>
+    </tr>
+    <tr>
+        <td class="newInstanz">
+            <button (click)="newInstanz()">Neu</button>
         </td>
     </tr>
 </table>

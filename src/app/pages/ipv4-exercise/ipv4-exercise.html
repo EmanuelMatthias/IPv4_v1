@@ -1,10 +1,94 @@
-<table>
-    <tr>
-        <td>{{ ip_dec }}</td>
-        <td>/{{ cidr_int }}</td>
-    </tr>
-    <tr>
-        <td><button (click)="newIPv4()">Neu</button></td>
-        <td><button (click)="setIPv4asCommon()">Übernehmen</button></td>
-    </tr>
-</table>
+<div class="ipv4">
+    {{ ip_dec }} /{{ cidr_int }}
+</div>
+<div class="buttons">
+    <button (click)="setIPv4asCommon()">Übernehmen</button>
+    <button (click)="newIPv4()">Neu</button>
+</div>
+<div class="outer">
+    <div class="inner">
+        <div class="accordion">
+            <div class="article">
+                <div class="acc_header" (click)="toggleDec()">dec</div>
+                <div class="acc_content" *ngIf="showDec">
+                    <table>
+                        <tr>
+                            <td>mask</td>
+                            <td *ngFor="let item of mask.dec">{{item}}</td>
+                        </tr>
+                        <tr>
+                            <td>network</td>
+                            <td *ngFor="let item of network.dec">{{item}}</td>
+                        </tr>
+                        <tr>
+                            <td>firstAddress</td>
+                            <td *ngFor="let item of firstAddress.dec">{{item}}</td>
+                        </tr>
+                        <tr>
+                            <td>lastAddress</td>
+                            <td *ngFor="let item of lastAddress.dec">{{item}}</td>
+                        </tr>
+                        <tr>
+                            <td>broadcast</td>
+                            <td *ngFor="let item of broadcast.dec">{{item}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="article">
+                <div class="acc_header" (click)="toggleHex()">hex</div>
+                <div class="acc_content" *ngIf="showHex">
+                    <table>
+                        <tr>
+                            <td>mask</td>
+                            <td *ngFor="let item of mask.hex">{{item}}</td>
+                        </tr>
+                        <tr>
+                            <td>network</td>
+                            <td *ngFor="let item of network.hex">{{item}}</td>
+                        </tr>
+                        <tr>
+                            <td>firstAddress</td>
+                            <td *ngFor="let item of firstAddress.hex">{{item}}</td>
+                        </tr>
+                        <tr>
+                            <td>lastAddress</td>
+                            <td *ngFor="let item of lastAddress.hex">{{item}}</td>
+                        </tr>
+                        <tr>
+                            <td>broadcast</td>
+                            <td *ngFor="let item of broadcast.hex">{{item}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="article">
+                <div class="acc_header" (click)="toggleBin()">Binar</div>
+                <div class="acc_content" *ngIf="showBin">
+                    <table>
+                        <tr>
+                            <td>mask</td>
+                            <td *ngFor="let item of mask.bin">{{item}}</td>
+                        </tr>
+                        <tr>
+                            <td>network</td>
+                            <td *ngFor="let item of network.bin">{{item}}</td>
+                        </tr>
+                        <tr>
+                            <td>firstAddress</td>
+                            <td *ngFor="let item of firstAddress.bin">{{item}}</td>
+                        </tr>
+                        <tr>
+                            <td>lastAddress</td>
+                            <td *ngFor="let item of lastAddress.bin">{{item}}</td>
+                        </tr>
+                        <tr>
+                            <td>broadcast</td>
+                            <td *ngFor="let item of broadcast.bin">{{item}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

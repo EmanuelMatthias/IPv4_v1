@@ -12,7 +12,11 @@ import { Ipv4Service } from '../../../services/ipv4/ipv4';
   styleUrl: './ipv4-exercise.scss'
 })
 export class Ipv4Exercise implements OnInit {
+
   ipv4!: IPv4;
+  public showDec= true;
+  public showHex= false;
+  public showBin= false;
 
   constructor(private ipv4Service: Ipv4Service){
   }
@@ -37,4 +41,43 @@ export class Ipv4Exercise implements OnInit {
   get cidr_int(){
     return this.ipv4.get_CIDR_int()
   }
+  get mask(){
+    return {
+      dec: this.ipv4.get_CIDR_decimal(),
+      hex: this.ipv4.get_CIDR_hexadecimal(),
+      bin: this.ipv4.get_CIDR_binary(),
+    }
+  }
+  get network(){
+    return {
+      dec: this.ipv4.get_Network_decimal(),
+      hex: this.ipv4.get_Network_hexadecimal(),
+      bin: this.ipv4.get_Network_binary(),
+    }
+  }
+  get firstAddress(){
+    return {
+      dec: this.ipv4.get_FirstAddress_decimal(),
+      hex: this.ipv4.get_FirstAddress_hexadecimal(),
+      bin: this.ipv4.get_FirstAddress_binary(),
+    }
+  }
+  get lastAddress(){
+    return {
+      dec: this.ipv4.get_LastAddress_decimal(),
+      hex: this.ipv4.get_LastAddress_hexadecimal(),
+      bin: this.ipv4.get_LastAddress_binary(),
+    }
+  }
+  get broadcast(){
+    return {
+      dec: this.ipv4.get_Broadcast_decimal(),
+      hex: this.ipv4.get_Broadcast_hexadecimal(),
+      bin: this.ipv4.get_Broadcast_binary(),
+    }
+  }
+
+  toggleDec(){ this.showDec = !this.showDec; }
+  toggleHex(){ this.showHex = !this.showHex; }
+  toggleBin(){ this.showBin = !this.showBin; }
 }
