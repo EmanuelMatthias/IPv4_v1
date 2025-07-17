@@ -1,5 +1,7 @@
 <div class="ipv4">
-    {{ ip_dec }} /{{ cidr_int }}
+    {{ ip_dec }} 
+    <span class="cidr" *ngIf="cidr_modus === 0" >/{{ cidr_int }}</span>
+    <span class="mask" *ngIf="cidr_modus === 1">{{ mask.dec.join('.') }}</span>
 </div>
 <div class="buttons">
     <button (click)="setIPv4asCommon()">Übernehmen</button>
@@ -11,26 +13,42 @@
             <div class="article">
                 <div class="acc_header" (click)="toggleDec()">dec</div>
                 <div class="acc_content" *ngIf="showDec">
-                    <table>
-                        <tr>
-                            <td>mask</td>
-                            <td *ngFor="let item of mask.dec">{{item}}</td>
+                    <table class="table_dec">
+                        <tr  *ngIf="cidr_modus === 0">
+                            <td>Mask</td>
+                            <td *ngFor="let item of mask.dec">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
+                        </tr>
+                        <tr  *ngIf="cidr_modus === 1">
+                            <td>CIDR</td>
+                            <td>
+                                <input [attr.data-value]="cidr_int" (input)="inputHandler($event)" />
+                            </td>
                         </tr>
                         <tr>
-                            <td>network</td>
-                            <td *ngFor="let item of network.dec">{{item}}</td>
+                            <td>Network</td>
+                            <td *ngFor="let item of network.dec">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
                         </tr>
                         <tr>
-                            <td>firstAddress</td>
-                            <td *ngFor="let item of firstAddress.dec">{{item}}</td>
+                            <td>Broadcast</td>
+                            <td *ngFor="let item of broadcast.dec">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
                         </tr>
                         <tr>
-                            <td>lastAddress</td>
-                            <td *ngFor="let item of lastAddress.dec">{{item}}</td>
+                            <td>First Address</td>
+                            <td *ngFor="let item of firstAddress.dec">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
                         </tr>
                         <tr>
-                            <td>broadcast</td>
-                            <td *ngFor="let item of broadcast.dec">{{item}}</td>
+                            <td>Last Address</td>
+                            <td *ngFor="let item of lastAddress.dec">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -38,53 +56,85 @@
             <div class="article">
                 <div class="acc_header" (click)="toggleHex()">hex</div>
                 <div class="acc_content" *ngIf="showHex">
-                    <table>
+                    <table class="table_hex">
                         <tr>
-                            <td>mask</td>
-                            <td *ngFor="let item of mask.hex">{{item}}</td>
+                            <td>Mask</td>
+                            <td *ngFor="let item of mask.hex">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
                         </tr>
                         <tr>
-                            <td>network</td>
-                            <td *ngFor="let item of network.hex">{{item}}</td>
+                            <td>IP</td>
+                            <td *ngFor="let item of ip.hex">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
                         </tr>
                         <tr>
-                            <td>firstAddress</td>
-                            <td *ngFor="let item of firstAddress.hex">{{item}}</td>
+                            <td>Network</td>
+                            <td *ngFor="let item of network.hex">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
                         </tr>
                         <tr>
-                            <td>lastAddress</td>
-                            <td *ngFor="let item of lastAddress.hex">{{item}}</td>
+                            <td>Broadcast</td>
+                            <td *ngFor="let item of broadcast.hex">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
                         </tr>
                         <tr>
-                            <td>broadcast</td>
-                            <td *ngFor="let item of broadcast.hex">{{item}}</td>
+                            <td>First Address</td>
+                            <td *ngFor="let item of firstAddress.hex">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Last Address</td>
+                            <td *ngFor="let item of lastAddress.hex">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
                         </tr>
                     </table>
                 </div>
             </div>
             <div class="article">
-                <div class="acc_header" (click)="toggleBin()">Binar</div>
+                <div class="acc_header" (click)="toggleBin()">bin</div>
                 <div class="acc_content" *ngIf="showBin">
-                    <table>
+                    <table class="table_bin">
                         <tr>
-                            <td>mask</td>
-                            <td *ngFor="let item of mask.bin">{{item}}</td>
+                            <td>Mask</td>
+                            <td *ngFor="let item of mask.bin">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
                         </tr>
                         <tr>
-                            <td>network</td>
-                            <td *ngFor="let item of network.bin">{{item}}</td>
+                            <td>IP</td>
+                            <td *ngFor="let item of ip.bin">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
                         </tr>
                         <tr>
-                            <td>firstAddress</td>
-                            <td *ngFor="let item of firstAddress.bin">{{item}}</td>
+                            <td>Network</td>
+                            <td *ngFor="let item of network.bin">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
                         </tr>
                         <tr>
-                            <td>lastAddress</td>
-                            <td *ngFor="let item of lastAddress.bin">{{item}}</td>
+                            <td>Broadcast</td>
+                            <td *ngFor="let item of broadcast.bin">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
                         </tr>
                         <tr>
-                            <td>broadcast</td>
-                            <td *ngFor="let item of broadcast.bin">{{item}}</td>
+                            <td>First Address</td>
+                            <td *ngFor="let item of firstAddress.bin">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Last Address</td>
+                            <td *ngFor="let item of lastAddress.bin">
+                                <input [attr.data-value]="item" (input)="inputHandler($event)" />
+                            </td>
                         </tr>
                     </table>
                 </div>

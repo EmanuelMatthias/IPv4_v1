@@ -8,14 +8,14 @@ import { Ipv4Service } from '../../../services/ipv4/ipv4';
   styleUrl: './input-ipv4.scss'
 })
 export class InputIpv4 {
+
   ip: number[]
   cidr: number;
+
   constructor(private ipv4Service: Ipv4Service) {
     this.ip = this.ipv4Service.ipv4.get_IP_decimal();
     this.cidr = this.ipv4Service.ipv4.get_CIDR_int();
   }
-
-
 
   setOctet(index: number, event: Event) {
     const input = event.target as HTMLInputElement | null;
@@ -37,8 +37,7 @@ export class InputIpv4 {
       const max = Number(input.max);
       if (value < min) input.value = input.min;
       if (value > max) input.value = input.max;
-      console.log(input)
-      console.log(input.value)
+      
       let next = document.querySelector(`[tabindex="${input.tabIndex + 1}"]`) as HTMLInputElement;
       if (!next)
         next = document.querySelector(`[tabindex="1"]`) as HTMLInputElement;
@@ -51,6 +50,5 @@ export class InputIpv4 {
   focusHandler(event: Event) {
     const input = event.target as HTMLInputElement | null;
     input?.select();
-    console.log(event)
   }
 }

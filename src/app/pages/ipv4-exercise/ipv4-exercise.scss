@@ -10,6 +10,14 @@
 div {
     &.ipv4 {
         font-weight: bold;
+        span{
+            &.cidr{
+                padding-left: 1rch;
+            }
+            &.mask{
+                padding-left: 4rch;
+            }
+        }
     }
 
     &.outer {
@@ -22,6 +30,29 @@ div {
 
             position: absolute;
             inset: 0 0 0 0;
+        }
+    }
+}
+table{
+    input{
+        text-align: center;
+        &.okay{
+            background-color: rgba(0,128,0,0.5);
+        }
+    }
+    &.table_dec{
+        input{
+            width: 4rch;
+        }
+    }
+    &.table_hex{
+        input{
+            width: 3rch;
+        }
+    }
+    &.table_bin{
+        input{
+            width: 4rch;
         }
     }
 }

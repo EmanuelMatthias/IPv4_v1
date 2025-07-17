@@ -1,82 +1,166 @@
-<table>
+<table class="simpleBinaryTable">
     <tr>
         <td>Mask</td>
-        <td *ngFor="let item of mask_bin_splited.lan,let id = index" class="lan"><pre>{{ id!==0?' ':''}}{{ item }}</pre></td>
-        <td *ngFor="let item of mask_bin_splited.host,let id = index" class="host"><pre>{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre></td>
+        <td *ngFor="let item of mask_bin_splited.lan,let id = index" class="lan"
+            (mouseover)="hoverHandler('bin','mask',id,'lan')">
+            <pre type="bin" pos="mask" [attr.data-index]="id" specpos="lan">{{ id!==0?' ':''}}{{ item }}</pre>
+        </td>
+        <td *ngFor="let item of mask_bin_splited.host,let id = index" class="host"
+            (mouseover)="hoverHandler('bin','mask',id,'host')">
+            <pre type="bin" pos="mask" [attr.data-index]="id" specpos="host">{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre>
+        </td>
     </tr>
     <tr>
         <td>IP</td>
-        <td *ngFor="let item of ip_bin_splited.lan,let id = index" class="lan"><pre>{{ id!==0?' ':''}}{{ item }}</pre></td>
-        <td *ngFor="let item of ip_bin_splited.host,let id = index" class="host"><pre>{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre></td>
+        <td *ngFor="let item of ip_bin_splited.lan,let id = index" class="lan"
+            (mouseover)="hoverHandler('bin','ip',id,'lan')">
+            <pre type="bin" pos="ip" [attr.data-index]="id" specpos="lan">{{ id!==0?' ':''}}{{ item }}</pre>
+        </td>
+        <td *ngFor="let item of ip_bin_splited.host,let id = index" class="host"
+            (mouseover)="hoverHandler('bin','ip',id,'host')">
+            <pre type="bin" pos="ip" [attr.data-index]="id" specpos="host">{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre>
+        </td>
     </tr>
     <tr>
         <td>Network</td>
-        <td *ngFor="let item of network_bin_splited.lan,let id = index" class="lan"><pre>{{ id!==0?' ':''}}{{ item }}</pre></td>
-        <td *ngFor="let item of network_bin_splited.host,let id = index" class="host"><pre>{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre></td>
+        <td *ngFor="let item of network_bin_splited.lan,let id = index" class="lan"
+            (mouseover)="hoverHandler('bin','network',id,'lan')">
+            <pre type="bin" pos="network" [attr.data-index]="id" specpos="lan">{{ id!==0?' ':''}}{{ item }}</pre>
+        </td>
+        <td *ngFor="let item of network_bin_splited.host,let id = index" class="host"
+            (mouseover)="hoverHandler('bin','network',id,'host')">
+            <pre type="bin" pos="network" [attr.data-index]="id" specpos="host">{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre>
+        </td>
     </tr>
     <tr>
         <td>Broadcast</td>
-        <td *ngFor="let item of broadcast_bin_splited.lan,let id = index" class="lan"><pre>{{ id!==0?' ':''}}{{ item }}</pre></td>
-        <td *ngFor="let item of broadcast_bin_splited.host,let id = index" class="host"><pre>{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre></td>
+        <td *ngFor="let item of broadcast_bin_splited.lan,let id = index" class="lan"
+            (mouseover)="hoverHandler('bin','broadcast',id,'lan')">
+            <pre type="bin" pos="broadcast" [attr.data-index]="id" specpos="lan">{{ id!==0?' ':''}}{{ item }}</pre>
+        </td>
+        <td *ngFor="let item of broadcast_bin_splited.host,let id = index" class="host"
+            (mouseover)="hoverHandler('bin','broadcast',id,'host')">
+            <pre type="bin" pos="broadcast" [attr.data-index]="id" specpos="host">{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre>
+        </td>
     </tr>
     <tr>
         <td>First Address</td>
-        <td *ngFor="let item of firstaddress_bin_splited.lan,let id = index" class="lan"><pre>{{ id!==0?' ':''}}{{ item }}</pre></td>
-        <td *ngFor="let item of firstaddress_bin_splited.host,let id = index" class="host"><pre>{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre></td>
+        <td *ngFor="let item of firstaddress_bin_splited.lan,let id = index" class="lan"
+            (mouseover)="hoverHandler('bin','firstaddress',id,'lan')">
+            <pre type="bin" pos="firstaddress" [attr.data-index]="id" specpos="lan">{{ id!==0?' ':''}}{{ item }}</pre>
+        </td>
+        <td *ngFor="let item of firstaddress_bin_splited.host,let id = index" class="host"
+            (mouseover)="hoverHandler('bin','firstaddress',id,'host')">
+            <pre type="bin" pos="firstaddress" [attr.data-index]="id" specpos="host">{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre>
+        </td>
     </tr>
     <tr>
         <td>Last Address</td>
-        <td *ngFor="let item of lastaddress_bin_splited.lan,let id = index" class="lan"><pre>{{ id!==0?' ':''}}{{ item }}</pre></td>
-        <td *ngFor="let item of lastaddress_bin_splited.host,let id = index" class="host"><pre>{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre></td>
+        <td *ngFor="let item of lastaddress_bin_splited.lan,let id = index" class="lan"
+            (mouseover)="hoverHandler('bin','lastaddress',id,'lan')">
+            <pre type="bin" pos="lastaddress" [attr.data-index]="id" specpos="lan">{{ id!==0?' ':''}}{{ item }}</pre>
+        </td>
+        <td *ngFor="let item of lastaddress_bin_splited.host,let id = index" class="host"
+            (mouseover)="hoverHandler('bin','lastaddress',id,'host')">
+            <pre type="bin" pos="lastaddress" [attr.data-index]="id" specpos="host">{{ id!==0 || !colspan.needExtension ?' ':''}}{{ item }}</pre>
+        </td>
     </tr>
     <tr class="empty"></tr>
     <tr>
         <td>Mask</td>
-        <td *ngFor="let item of mask_dec,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+        <td *ngFor="let item of mask_dec,let id = index"
+            [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"
+            (mouseover)="hoverHandler('dec','mask',id)">
+            <pre  type="dec" pos="mask" [attr.data-index]="id">{{ item }}</pre>
+        </td>
     </tr>
     <tr>
         <td>IP</td>
-        <td *ngFor="let item of ip_dec,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+        <td *ngFor="let item of ip_dec,let id = index"
+            [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"
+            (mouseover)="hoverHandler('dec','ip',id)">
+            <pre type="dec" pos="ip" [attr.data-index]="id">{{ item }}</pre>
+        </td>
     </tr>
     <tr>
         <td>Network</td>
-        <td *ngFor="let item of network_dec,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+        <td *ngFor="let item of network_dec,let id = index"
+            [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"
+            (mouseover)="hoverHandler('dec','network',id)">
+            <pre type="dec" pos="network" [attr.data-index]="id">{{ item }}</pre>
+        </td>
     </tr>
     <tr>
         <td>Broadcast</td>
-        <td *ngFor="let item of broadcast_dec,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+        <td *ngFor="let item of broadcast_dec,let id = index"
+            [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"
+            (mouseover)="hoverHandler('dec','broadcast',id)">
+            <pre type="dec" pos="broadcast" [attr.data-index]="id">{{ item }}</pre>
+        </td>
     </tr>
     <tr>
         <td>First Address</td>
-        <td *ngFor="let item of firstAddress_dec,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+        <td *ngFor="let item of firstAddress_dec,let id = index"
+            [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"
+            (mouseover)="hoverHandler('dec','firstaddress',id)">
+            <pre type="dec" pos="firstaddress" [attr.data-index]="id">{{ item }}</pre>
+        </td>
     </tr>
     <tr>
         <td>Last Address</td>
-        <td *ngFor="let item of lastAddress_dec,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+        <td *ngFor="let item of lastAddress_dec,let id = index"
+            [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"
+            (mouseover)="hoverHandler('dec','lastaddress',id)">
+            <pre type="dec" pos="lastaddress" [attr.data-index]="id">{{ item }}</pre>
+        </td>
     </tr>
     <tr class="empty"></tr>
     <tr>
         <td>Mask</td>
-        <td *ngFor="let item of mask_hex,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+        <td *ngFor="let item of mask_hex,let id = index"
+            [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"
+            (mouseover)="hoverHandler('hex','mask',id)">
+            <pre type="hex" pos="mask" [attr.data-index]="id">{{ item }}</pre>
+        </td>
     </tr>
     <tr>
         <td>IP</td>
-        <td *ngFor="let item of ip_hex,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+        <td *ngFor="let item of ip_hex,let id = index"
+            [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"
+            (mouseover)="hoverHandler('hex','ip',id)">
+            <pre type="hex" pos="ip" [attr.data-index]="id">{{ item }}</pre>
+        </td>
     </tr>
     <tr>
         <td>Network</td>
-        <td *ngFor="let item of network_hex,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+        <td *ngFor="let item of network_hex,let id = index"
+            [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"
+            (mouseover)="hoverHandler('hex','network',id)">
+            <pre type="hex" pos="network" [attr.data-index]="id">{{ item }}</pre>
+        </td>
     </tr>
     <tr>
         <td>Broadcast</td>
-        <td *ngFor="let item of broadcast_hex,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+        <td *ngFor="let item of broadcast_hex,let id = index"
+            [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"
+            (mouseover)="hoverHandler('hex','broadcast',id)">
+            <pre type="hex" pos="broadcast" [attr.data-index]="id">{{ item }}</pre>
+        </td>
     </tr>
     <tr>
         <td>First Address</td>
-        <td *ngFor="let item of firstAddress_hex,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+        <td *ngFor="let item of firstAddress_hex,let id = index"
+            [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"
+            (mouseover)="hoverHandler('hex','firstaddress',id)">
+            <pre type="hex" pos="firstaddress" [attr.data-index]="id">{{ item }}</pre>
+        </td>
     </tr>
     <tr>
         <td>Last Address</td>
-        <td *ngFor="let item of lastAddress_hex,let id = index" [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"><pre>{{ item }}</pre></td>
+        <td *ngFor="let item of lastAddress_hex,let id = index"
+            [attr.colspan]="colspan.needExtension && id === colspan.cell ? 3 : 2"
+            (mouseover)="hoverHandler('hex','lastaddress',id)">
+            <pre type="hex" pos="lastaddress" [attr.data-index]="id">{{ item }}</pre>
+        </td>
     </tr>
 </table>

@@ -9,6 +9,7 @@ export class Ipv4Service {
 
   ipv4 = new IPv4(3232238092, 24);
   ipv4_exercise = new IPv4(3232238092, 24);
+  ipv4_exerciseCIDRModus = 0;
 
   set_octet(index: number, value: string | number) {
     const octets = [...this.ipv4.get_IP_decimal()];

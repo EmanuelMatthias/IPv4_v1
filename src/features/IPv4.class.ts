@@ -41,13 +41,17 @@ export class IPv4 {
     public get_FirstAddress_binary() { return this.intToBinary(this.get_FirstAddress_int()); }
     public get_FirstAddress_binary_splited() { return this.binary_split(this.intToBinary(this.get_FirstAddress_int())?.join('')); }
 
-    // First Address
+    // Last Address
     public get_LastAddress_int() { return (this.get_Broadcast_int() - 1) >>> 0; }
     public get_LastAddress_decimal() { return this.intToDecimal(this.get_LastAddress_int()); }
     public get_LastAddress_hexadecimal() { return this.intToHexdecimal(this.get_LastAddress_int()); }
     public get_LastAddress_binary() { return this.intToBinary(this.get_LastAddress_int()); }
     public get_LastAddress_binary_splited() { return this.binary_split(this.intToBinary(this.get_LastAddress_int())?.join('')); }
 
+
+    public get_range(){
+        return `${this.get_LastAddress_int()}+1 - (${this.get_FirstAddress_int()}-1)`;
+    }
 
     // setter
     public set_Ip_with_decimal(decNotation: string) {
