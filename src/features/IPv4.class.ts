@@ -48,9 +48,8 @@ export class IPv4 {
     public get_LastAddress_binary() { return this.intToBinary(this.get_LastAddress_int()); }
     public get_LastAddress_binary_splited() { return this.binary_split(this.intToBinary(this.get_LastAddress_int())?.join('')); }
 
-
     public get_range(){
-        return `${this.get_LastAddress_int()}+1 - (${this.get_FirstAddress_int()}-1)`;
+        return this.get_LastAddress_int() - this.get_FirstAddress_int() + 1;
     }
 
     // setter

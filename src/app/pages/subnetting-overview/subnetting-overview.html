@@ -1,5 +1,17 @@
 <app-input-ipv4></app-input-ipv4>
 <div>
-    <canvas id="test" width="1000" height="200"></canvas>
-
+    <table>
+        <tr>
+            <td *ngFor="let a of cidrList; let id = index;">
+                <select (change)="onSelectChange($event,id)">
+                    <option [selected]="a.value === null" [value]="null">none</option>
+                    <option *ngFor="let b of a.range" [selected]="a.value === b" [value]="b">{{ b }}</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <div>{{ net }}</div>
+    <div>
+        <canvas id="test"></canvas>
+    </div>
 </div>

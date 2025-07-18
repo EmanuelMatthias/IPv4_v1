@@ -110,6 +110,5 @@ export class SimpleBinary {
     pack?.forEach(element => {
       element.classList.add('marked');
     });
-    console.log(this.ipv4Service.ipv4.get_range())
   }
 }
